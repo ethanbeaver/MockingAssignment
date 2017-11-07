@@ -1,9 +1,10 @@
 # MockingAssignment
+
 Homework #6 for CPTR245
 
 Authors: Ethan Beaver, Nick Perry
 
-##Steps to Run
+## Steps to Run
 
 * Ensure that JUnit4 is added to the class path of the project.
 
@@ -28,4 +29,10 @@ we had to learn how to do that in Mockito. This included learning how to mock cl
 interfaces, mocking functions, and verify the number of times a mocked function was called.
 
 ### Step 3: Actually implementing mocks into JUnit tests
-Implementing 
+
+Implementing Mockito was a fairly simple process. We both appreciated how readable its
+syntax was. When saying when(function_call).return(something) is exactly how you'd describe
+what it's doing. Also, the ability to easily specify the number of times a function is called
+is very helpful. We illustrated two ways to use the verify() function in Mockito. Finally, the
+only difficulty that we ran into was figuring out how to mock functions that had return type of
+void. It ends up being a slightly different syntax than mocking functions with a return value.
