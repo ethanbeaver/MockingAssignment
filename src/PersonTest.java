@@ -4,6 +4,7 @@ import org.junit.Test;
 import org.mockito.Mock;
 
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertFalse;
 import static org.mockito.Mockito.*;
 
 public class PersonTest {
@@ -35,8 +36,14 @@ public class PersonTest {
 
     @Test
     public void testUpdateWhenNotFound() {
-        Person person2 = new Person(1111, "Nick");
+//        Mock DAO methods
+        when(daoMock.fetchPerson(1111)).thenReturn(null);
 
+//       Assert the unit test passes
+        assertFalse(psMock.update(1111, "Phil"));
+
+//       Verify that the mocked method was called once
+        verify(daoMock, atLeast(1)).fetchPerson(1111);
     }
 
 }
